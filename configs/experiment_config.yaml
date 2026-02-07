@@ -1,0 +1,37 @@
+project:
+  name: "Linear Regression Architecture Workshop"
+  run_tag: "robot_pm_univariate_v1"
+
+data:
+  csv_path: "data/raw/RMBR4-2_export_test.csv"
+  create_three_robots: true
+  robot_count: 3
+
+  # Optional DB (Neon/Postgres). Keep use_db false unless you configured Neon.
+  use_db: false
+  db_connection_string: "postgresql+psycopg2://USER:PASSWORD@HOST/DB?sslmode=require"
+  db_table: "robot_stream"
+
+features:
+  # Choose one predictor feature (univariate regression)
+  predictor_feature: "Axis #1"
+
+targets:
+  # Your CSV has no failure label. We engineer a "time_to_failure_days" target.
+  # Failure event definition: when |zscore(feature)| >= z_threshold
+  z_threshold: 3.0
+  min_gap_minutes_between_failures: 60
+  target_name: "time_to_failure_days"
+
+split:
+  test_size: 0.2
+  random_state: 42
+
+scratch_model:
+  learning_rate: 0.05
+  epochs: 2000
+
+outputs:
+  processed_csv_path: "data/processed/processed_robot_data.csv"
+  results_csv_path: "experiments/results.csv"
+  plots_dir: "experiments/plots"

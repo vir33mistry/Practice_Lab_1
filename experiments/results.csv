@@ -1,0 +1,16 @@
+
+# `experiments/results.csv`
+- Stores experiment tracking results: model type, metrics (RMSE/MAE/R²), timestamp/run tag.
+- Makes performance comparable across runs (MLOps tracking, audit-ready).
+- Shows measurable quality of our **failure-time prediction** model.
+
+
+
+robot_pm_univariate_v1,scratch,Axis #1,time_to_failure_days,0.012502,0.010618,0.000019,0.05,2000,Engineered failure target via rolling z-score
+robot_pm_univariate_v1,sklearn,Axis #1,time_to_failure_days,0.012502,0.010618,0.000019,,,Baseline sklearn LinearRegression
+robot_pm_univariate_v1,scratch,Axis #1,time_to_failure_days,0.012502,0.010618,0.000019,0.05,2000,Engineered failure target via rolling z-score
+robot_pm_univariate_v1,sklearn,Axis #1,time_to_failure_days,0.012502,0.010618,0.000019,,,Baseline sklearn LinearRegression
+robot_pm_univariate_v1,scratch,Axis #1,time_to_failure_days,0.012502,0.010618,0.000019,0.05,2000,Engineered failure target via rolling z-score
+robot_pm_univariate_v1,sklearn,Axis #1,time_to_failure_days,0.012502,0.010618,0.000019,,,Baseline sklearn LinearRegression
+
+
